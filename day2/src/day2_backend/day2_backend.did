@@ -1,0 +1,49 @@
+type Homework = record {
+    completed: bool;
+    description: text;
+//    dueDate: Time;
+    title: text;
+};
+
+type Result = variant {
+    err: text;
+    ok;
+};
+
+type Result_1 =  variant {
+   err: text;
+   ok: Homework;
+};
+
+
+// type Result = record {
+//     ok: bool;
+//     err: text;
+// };
+
+// type Result2 = variant {
+//     err: text;
+//     ok;
+// };
+
+// type Result3 = variant {
+//     err: text;
+//     ok: bool;
+// };
+
+service : {
+    "addHomework" : (Homework) -> (nat);
+    "greet": (text) -> (text) query;
+    "deleteHomework": (nat) -> (Result);
+    // "deleteHomework2": (nat) -> (Result2);
+    // "deleteHomework3": (nat) -> (Result3);
+    // "deleteHomework4": (nat) -> (Result3);
+    // "deleteHomework5": (nat) -> (Result2);
+    "getAllHomework": () -> (vec Homework) query;
+    "getHomework": (nat) -> (Result_1) query;
+    "getPendingHomework": () -> (vec Homework) query;
+    "markAsCompleted": (nat) -> (Result);
+    "searchHomework": (text) -> (vec Homework) query;
+    "size": () -> (nat) query;
+    "updateHomework": (nat, Homework) -> (Result);
+}
