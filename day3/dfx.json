@@ -1,0 +1,17 @@
+{
+  "canisters": {
+    "day3_backend": {
+      "candid": "src/day3_backend/day3_backend.did",
+      "package": "day3_backend",
+      "type": "rust"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
